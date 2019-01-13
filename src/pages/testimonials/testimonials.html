@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Testimonials</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-content class="bg-theme">
+        <ion-card  *ngFor="let test of testimonials">
+            <img src="{{test.image_url}}" alt="name" class="img">
+            <ion-card-content>
+                {{test.testimonial}}
+                <span><ion-icon name="remove"></ion-icon>{{test.name}}</span>
+            </ion-card-content>
+        </ion-card>
+    </ion-content>
+</ion-content>

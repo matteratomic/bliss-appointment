@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "637446709495",
+    "firebase_url": "https://dentist-58abe.firebaseio.com",
+    "project_id": "dentist-58abe",
+    "storage_bucket": "dentist-58abe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637446709495:android:95c1d7e9bbc8e100",
+        "android_client_info": {
+          "package_name": "com.verbosetech.dentist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637446709495-sn78ov9tjqlu7spekcdsns2o33p6fs29.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "637446709495-sn78ov9tjqlu7spekcdsns2o33p6fs29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsHIW6ICGUBE36qkSZBOajaJh1uZjR6U8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

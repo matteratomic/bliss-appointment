@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Reach Us</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <!--<div #map id="map"></div>-->
+  <div #map id="map"></div>
+    <ion-grid col-12>
+      <ion-row class="fixed-bottom">
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="ios-navigate" class="text-red" (click)="openMap()"></ion-icon>
+            <p class="text-red bold" (click)="openMap()">We are here...</p>
+            <p (click)="openMap()">{{address}}</p>
+            <button ion-button color="danger" block class="btn-theme-big-red" [navPush]="appointmentbookPage">
+				Book an appointment
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+</ion-content>

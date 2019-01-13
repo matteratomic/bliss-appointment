@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Gallery</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-theme">
+    <ion-content class="bg-gallery">
+        <ion-grid col-11 col-sm-10 style="padding-top: 17rem !important;">
+            <ion-row>
+                <ion-col *ngFor="let photo of gallery" col-6>
+                    <ion-card>
+                        <ion-card-content>
+                            <img src="{{photo.image_url}}" alt="image 1" (click)="showImage(photo)">
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-content>
+</ion-content>

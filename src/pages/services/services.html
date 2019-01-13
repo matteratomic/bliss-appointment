@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Services</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg-theme">
+    <ion-card style="margin-bottom: 10px !important;">
+        <ion-card-content class="bg-white">
+            <h4 class="text-red  bold">CHANGE YOUR SMILE, AND RENEW YOUR SELF CONFIDENCE !!</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lectus eros. In volutpat nulla ipsum, eu auctor lectus faucibus id. Integer nec felis nulla.
+            </p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content class="bg-white">
+            <p style="margin-bottom: 1rem;">Following are our services</p>
+            <ion-row class="margian-nagitive">
+                <ion-col *ngFor="let service of services" col-4 text-center>
+                    <ion-card>
+                        <span class="center bg-red text-white">{{service.title}}</span>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+          
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

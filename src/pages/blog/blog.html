@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Blog</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-theme">
+
+    <ion-card>
+        <img src="{{blog.image_url}}" alt='img'>
+        <ion-card-content>
+            <h3 class="text-red">{{blog.title}}</h3>
+            <span>{{blog.created_at}}</span>
+        </ion-card-content>
+    </ion-card>
+    <div class='bg-white'>
+        <p>{{blog.body}}</p>
+    </div>
+
+</ion-content>

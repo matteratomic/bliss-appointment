@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+	<ion-buttons end>
+		<button ion-button item-right icon-only clear (click)="confirmLogout()"><ion-icon name="md-log-out" class="text-red"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-content class="bg-theme">
+        <div class="bg-white">
+            <ion-grid col-11 col-sm-10>
+                <ion-row>
+                    <ion-col col-12 text-center>
+                        <img src="assets/Icons/logo.png" alt="logo" class="logo">
+                    </ion-col>
+                </ion-row>
+                <div class="sign-row">
+                    <ion-segment [(ngModel)]="sign">
+                        <ion-segment-button value="signin">
+                            Edit Profile
+                        </ion-segment-button>
+                        <ion-segment-button value="signup">
+                            Change Password
+                        </ion-segment-button>
+                    </ion-segment>
+                </div>
+            </ion-grid>
+        </div>
+        <div padding class="bg-theme">
+            <div [ngSwitch]="sign">
+                <ion-list *ngSwitchCase="'signin'">
+                    <ion-grid col-11 col-sm-10 style="padding: 2rem 0;">
+                        <ion-row>
+                            <ion-col class="form-theme">
+                                <ion-input type="tel" placeholder="Phone Number" [(ngModel)]="userUpdateRequest.mobile" class="input"></ion-input>
+								<ion-input type="email" placeholder="Email" [(ngModel)]="userUpdateRequest.email" class="input"></ion-input>
+                                <ion-input type="text" placeholder="Full Name" [(ngModel)]="userUpdateRequest.name" class="input"></ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-12>
+                                <button ion-button color="danger" block class="btn-theme-big-red" (click)="singIn()">Update profile</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-list>
+                <ion-list *ngSwitchCase="'signup'">
+                    <ion-grid col-11 col-sm-10 style="padding-top: 2rem 0;">
+                        <ion-row>
+                            <ion-col class="form-theme">
+                                <ion-input type="text" placeholder="Current password" [(ngModel)]="passwordUpdateRequest.password" class="input"></ion-input>
+                                <ion-input type="password" placeholder="New Password" [(ngModel)]="passwordUpdateRequest.new_password" class="input"></ion-input>
+								<ion-input type="password" placeholder="Confirm New Password" [(ngModel)]="passwordUpdateRequest.new_password_confirmation" class="input"></ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-12>
+                                <button ion-button color="danger" block class="btn-theme-big-red" (click)="singUp()">Update password</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-content>

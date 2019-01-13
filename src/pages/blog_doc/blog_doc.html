@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Blog Doc</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-content class="bg-theme">
+        <ion-card>
+            <ion-row *ngFor="let blog of blogs">
+                <ion-col col-4 style="background: url({{blog.image_url}});background-size: cover;"><img src="{{blog.image_url}}" alt='img'></ion-col>
+                <ion-col col-8>
+                    <ion-card-content (click)="detailPage(blog)">
+                        <h3 class="text-red">{{blog.title}}</h3>
+                        <span>{{blog.created_at}}</span>
+                        <p style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{blog.body}}</p>
+                    </ion-card-content>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+    </ion-content>
+</ion-content>

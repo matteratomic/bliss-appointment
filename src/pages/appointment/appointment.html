@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>My Appointments</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="bg-theme">
+
+    <div class="apont-row bg-white">
+        <ion-segment [(ngModel)]="appointment">
+            <ion-segment-button value="coming">
+                Upcoming
+            </ion-segment-button>
+            <ion-segment-button value="past">
+                Past
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div>
+        <div [ngSwitch]="appointment">
+            <ion-list *ngSwitchCase="'coming'">
+                <div class="no-appoint" *ngIf="upcoming == null || upcoming.length == 0">
+					<div style="text-align:center">
+						<img src="assets/img/no_appoint.png" alt="no appoint"/>
+						<span style="color:#9E9E9E; font-weight:bold;">No appointment to show</span>
+					</div>
+				</div>
+				<ion-card *ngFor="let apoint of upcoming">
+                    <ion-row>
+                        <ion-col col-3 text-center>
+                            <h2>
+                                <small>{{apoint.dateMonth}}</small>
+                                <span>{{apoint.dateDate}}</span>
+                                <small>{{apoint.dateDay}}</small>
+                            </h2>
+                        </ion-col>
+                        <ion-col col-9>
+                            <ion-row>
+                                <ion-col col-8>
+                                    <p>Timing</p>
+                                    <h3>{{apoint.dateTime}}</h3>
+                                </ion-col>
+                                <ion-col col-4>
+                                    <p>For</p>
+                                    <h3>My Self</h3>
+                                </ion-col>
+                            </ion-row>
+                            <hr>
+                            <ion-row>
+                                <ion-col col-8>
+                                    <p>Appointment Type</p>
+                                    <h3>{{apoint.service.title}}</h3>
+                                </ion-col>
+                                <ion-col col-4 class="select">
+                                    <ion-label [ngClass]="apoint.status == 'CANCELED' ? 'text-danger':'text-default'">
+										<span *ngIf="apoint.status != 'CANCELED'" (click)="cancel(apoint)">Cancel</span>
+										<span *ngIf="apoint.status == 'CANCELED'">Canceled</span>
+									</ion-label>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </ion-list>
+            <ion-list *ngSwitchCase="'past'">
+                <div class="no-appoint" *ngIf="past == null || past.length == 0">
+					<div style="text-align:center">
+						<img src="assets/img/no_appoint.png" alt="no appoint"/>
+						<span style="color:#9E9E9E; font-weight:bold;">No appointment to show</span>
+					</div>
+				</div>
+				<ion-card *ngFor="let apoint of past">
+                    <ion-row>
+                        <ion-col col-3 text-center>
+                            <h2>
+                                <small>{{apoint.dateMonth}}</small>
+                                <span>{{apoint.dateDate}}</span>
+                                <small>{{apoint.dateDay}}</small>
+                            </h2>
+                        </ion-col>
+                        <ion-col col-9>
+                            <ion-row>
+                                <ion-col col-8>
+                                    <p>Timing</p>
+                                    <h3>{{apoint.dateTime}}</h3>
+                                </ion-col>
+                                <ion-col col-4>
+                                    <p>For</p>
+                                    <h3>My Self</h3>
+                                </ion-col>
+                            </ion-row>
+                            <hr>
+                            <ion-row>
+                                <ion-col col-8>
+                                    <p>Appointment Type</p>
+                                    <h3>{{apoint.service.title}}</h3>
+                                </ion-col>
+                                <!-- <ion-col col-4 class="select">
+                                    <ion-label>Option</ion-label>
+                                    <div class="options  past">
+                                        <span>Rebook</span>
+                                        <span>Remove</span>
+                                    </div>
+                                </ion-col> -->
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </ion-list>
+        </div>
+    </div>
+
+    <ion-row class="fixed-btn">
+        <ion-col col-11 style="margin: 0 auto;">
+            <button ion-button color="danger" block class="btn-theme-big-red" [navPush]="appointmentbookPage">Book new appointment</button>
+        </ion-col>
+    </ion-row>
+</ion-content>

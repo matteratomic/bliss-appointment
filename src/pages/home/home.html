@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dental Care</ion-title>
+	<ion-buttons end>
+		<button ion-button item-right icon-only clear (click)="profileScreen()"><ion-icon name="md-person"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="bg-theme">
+  <ion-content class="home-bg">
+    <ion-grid col-11 col-sm-10>
+      <ion-row>
+        <ion-col col-12>
+          <img src="assets/Icons/logo.png" alt="logo" class="logo">
+        </ion-col>
+
+        <ion-col col-12>
+          <h1 class="heading-text">{{doctor_name}}</h1>
+          <p class="sub-text">Dental Care Clinic</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="aboutPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_about_us.png" alt="icon">
+              <p>About us</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="servicesPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_services.png" alt="icon">
+              <p>Services</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="appointmentPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_appointment.png" alt="icon">
+              <p>Appointment</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="blog_docPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_blog.png" alt="icon">
+              <p>Doc Blog</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="testimonialsPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_testimonials.png" alt="icon">
+              <p>Testimonials</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="galleryPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_gallery.png" alt="icon">
+              <p>Gallery</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="availabilityPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_availibility.png" alt="icon">
+              <p>Availability</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="reachPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_reach_us.png" alt="icon">
+              <p>Reach us</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-content [navPush]="contactPage">
+              <img src="assets/Icons/drawable-xxxhdpi/ic_contatc_us.png" alt="icon">
+              <p>Contact us</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-12>
+          <button ion-button color="danger" block class="btn-theme-big-red" [navPush]="appointmentbookPage">Book an
+            appointment
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-content>

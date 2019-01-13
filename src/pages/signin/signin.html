@@ -1,0 +1,66 @@
+<ion-content>
+    <ion-content class="bg-theme">
+        <div class="bg-white">
+            <ion-grid col-11 col-sm-10>
+                <ion-row>
+                    <ion-col col-12 text-center>
+                        <img src="assets/Icons/logo.png" alt="logo" class="logo">
+                    </ion-col>
+                </ion-row>
+                <div class="sign-row">
+                    <ion-segment [(ngModel)]="sign">
+                        <ion-segment-button value="signin">
+                            Sign in
+                        </ion-segment-button>
+                        <ion-segment-button value="signup">
+                            Sign up
+                        </ion-segment-button>
+                    </ion-segment>
+                </div>
+            </ion-grid>
+        </div>
+        <div padding class="bg-theme">
+            <div [ngSwitch]="sign">
+                <ion-list *ngSwitchCase="'signin'">
+                    <ion-grid col-11 col-sm-10 style="padding: 2rem 0;">
+                        <ion-row>
+                            <ion-col class="form-theme">
+                                <ion-input type="text" placeholder="Phone Number" [(ngModel)]="credentials.login" class="input"></ion-input>
+								<ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password" class="input"></ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-12>
+                                <button ion-button color="danger" block class="btn-theme-big-red" (click)="singIn()">Sign in</button>
+                            </ion-col>
+                            <ion-col col-6  text-center>
+                                <p class="info-text">New user?</p>
+                            </ion-col>
+                            <ion-col col-6>
+                                <button ion-button color="danger" block class="btn-theme-big-white" strong (click)="sign='signup'">Register Now</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-list>
+                <ion-list *ngSwitchCase="'signup'">
+                    <ion-grid col-11 col-sm-10 style="padding-top: 2rem 0;">
+                        <ion-row>
+                            <ion-col class="form-theme">
+                                <ion-input type="tel" placeholder="Phone Number" [(ngModel)]="registerRequest.mobile" class="input"></ion-input>
+								<ion-input type="email" placeholder="Email" [(ngModel)]="registerRequest.email" class="input"></ion-input>
+                                <ion-input type="text" placeholder="Full Name" [(ngModel)]="registerRequest.name" class="input"></ion-input>
+                                <ion-input type="password" placeholder="Create Password" [(ngModel)]="registerRequest.password" class="input"></ion-input>
+								<ion-input type="password" placeholder="Confirm Password" [(ngModel)]="registerRequestPasswordConfirm" class="input"></ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-12>
+                                <button ion-button color="danger" block class="btn-theme-big-red" (click)="singUp()">Sign up</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-content>

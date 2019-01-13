@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Book An Appointment</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-content class="bg-theme">            
+        <ion-row nowrap class="bg-white date-row" text-center style="padding-left: 10px;padding-right: 10px;overflow-x: scroll;overflow-y: hidden;height:20vw;word-wrap: break-word;">
+            <ion-col col-2 *ngFor="let d of dates" [ngClass]="(dateSelected == d) ? 'date-selected' : 'date'" (click)="markSelected(d)"><small>{{ months[d.getMonth()]}}</small>{{ d.getDate()}}<small>{{ weekDays[d.getDay()]}}</small></ion-col>
+        </ion-row>
+    
+        <ion-grid>
+            <ion-row style="padding-left: 10px;padding-right: 10px;">
+                <ion-col col-12>
+                    <ion-card class="bg-theme">
+                        <h2>Select Time</h2>
+                    </ion-card>
+                </ion-col>
+                <ion-col *ngFor="let time of availabilityTime" col-4 text-center  (click)="selectedTime(time)">
+                    <ion-card>
+                        <span class="center">{{time}}</span>
+                    </ion-card>
+                </ion-col>
+				<ion-col *ngIf="!availabilityTime || !availabilityTime.length" col-12>
+                    <ion-card class="bg-theme">
+                        <h2>No time slots available..</h2>
+                    </ion-card>
+                </ion-col>				
+                <ion-col col-12>
+                    <ion-card class="bg-theme">
+                        <!-- <h2>Appointment for...</h2> -->
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-12>
+                    <form style="width: 100%;">
+                        <ion-card class="bg-theme">
+						<!--
+                            <ion-list>
+                                <ion-item class="bg-theme">
+                                    <ion-label stacked>Full Name</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+                            </ion-list>
+                            <ion-list style="margin-bottom: 2rem;">
+                                <ion-item class="bg-theme">
+                                    <ion-label stacked>Contact Number</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+                            </ion-list>
+							-->
+                            <button ion-button color="danger" block class="btn-theme-big-red" (click)="next()">Next</button>
+                        </ion-card>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-content>
+</ion-content>

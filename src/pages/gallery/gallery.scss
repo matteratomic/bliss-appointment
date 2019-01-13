@@ -1,0 +1,29 @@
+page-gallery{
+    .bg-gallery{
+        background: url(../assets/img/bg-gallery.png);
+        background-size: cover;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .grid{
+        padding: 0 !important;
+    }
+    ion-card{
+        margin: 0 !important;
+        width:100%  !important;
+        border-radius:10px  !important;
+        ion-card-content{
+            padding: 0 !important;
+        }
+    }
+    .row{
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        .col{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+        }
+    }
+}

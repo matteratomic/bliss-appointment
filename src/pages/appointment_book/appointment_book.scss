@@ -1,0 +1,83 @@
+page-appointment_book{
+    ion-header:after{
+        display:none;
+    }
+    .date-row{
+        .month{
+            font-size: 1.2rem !important;
+            color: #999;
+        }
+		.date-selected{
+            font-size: 2.1rem;
+            color: #d71e1e;
+            small{
+                font-size: .9rem !important;
+                color: #d71e1e;
+                display: block;
+                padding-bottom: 1.5rem;
+                margin: auto;
+                width: 35px;
+                border-bottom: 3px solid #fff;
+                margin-bottom: -.5rem;
+            }
+        }
+        .date{
+            font-size: 2.1rem;
+            color: #222;
+            small{
+                font-size: .9rem !important;
+                color: #999;
+                display: block;
+                padding-bottom: 1.5rem;
+                margin: auto;
+                width: 35px;
+                border-bottom: 3px solid #fff;
+                margin-bottom: -.5rem;
+            }
+        }
+    }
+    .scroll-content{
+        padding: 0 !important;
+    }
+    .card{
+        margin: 5px !important;
+        width: calc(100% - 10px) !important;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 0px -2px rgba(0, 0, 0, 0.2), 0 0px 3px 0 rgba(0, 0, 0, 0.12);
+        -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 0px -2px rgba(0, 0, 0, 0.2), 0 0px 3px 0 rgba(0, 0, 0, 0.12);
+        &:hover,&:focus{
+            span.center{
+                background: #d71e1e !important;
+                color: #fff !important;
+            }
+
+        }
+        &.bg-theme{
+            box-shadow: none;
+        }
+        span.center{
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding-top: 23%;
+            padding-bottom: 23%;
+            line-height: 0;
+            font-size: 1rem;
+            white-space: nowrap;
+            color: #999;
+        }
+    }
+    .button-inner{
+        line-height: 3rem;
+    }
+    ion-item{
+        padding-left: 0 !important;
+        border-bottom: 1px solid #dedede !important;
+        margin-bottom: 1px !important;
+        ion-label{
+            color: #999 !important;
+        }
+    }
+}

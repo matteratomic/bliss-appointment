@@ -1,0 +1,29 @@
+page-blog{
+    ion-card{
+        margin: 0 !important;
+        width: 100% !important;
+        .text-red {
+            font-weight: bold !important;
+            font-size: 1.5rem !important;
+            margin-bottom: 5px !important;
+            margin-top: 0 !important;
+        }
+        span{
+            color: #a9a9a9 !important;
+            small{
+                position: relative;
+                top: -5px;
+                font-size: 9px;
+                margin-right: 3px;
+            }
+        }
+    }
+    .bg-white{
+        margin: 12px;
+        padding:16px;
+        p{
+            margin-top: 0;
+            line-height: 1.9rem;
+        }
+    }
+}
